@@ -379,6 +379,5 @@ declare namespace API {
     userRole?: string;
   };
 
-  export interface AiResonse {
-  }
+
 }
