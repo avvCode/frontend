@@ -1,15 +1,18 @@
 declare namespace API {
-
-  type AiResponse = {
-     genChart?: string
-     genResult?:string
-     chartId?:number
-  }
+  type addUsingGETParams = {
+    /** name */
+    name?: string;
+  };
 
   type BaseResponse = {
     code?: number;
     data?: Record<string, any>;
     message?: string;
+  };
+  type AiResponse = {
+    genChart?:string;
+    genResult ?: string;
+    chartId?: number;
   };
 
   type BaseResponseBoolean_ = {
@@ -94,12 +97,14 @@ declare namespace API {
     chartData?: string;
     chartType?: string;
     createTime?: string;
+    execMessage?: string;
     genChart?: string;
     genResult?: string;
     goal?: string;
     id?: number;
     isDelete?: number;
     name?: string;
+    status?: string;
     updateTime?: string;
     userId?: number;
   };
@@ -148,7 +153,13 @@ declare namespace API {
     id?: number;
   };
 
-  type genChartByAIUsingPOSTParams = {
+  type genChartByAiAsyncUsingPOSTParams = {
+    chartType?: string;
+    goal?: string;
+    name?: string;
+  };
+
+  type genChartByAiUsingPOSTParams = {
     chartType?: string;
     goal?: string;
     name?: string;
@@ -378,6 +389,4 @@ declare namespace API {
     userProfile?: string;
     userRole?: string;
   };
-
-
 }

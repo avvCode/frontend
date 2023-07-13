@@ -1,4 +1,4 @@
-import {genChartByAIUsingPOST} from '@/services/bi/chartController';
+import {genChartByAiUsingPOST} from '@/services/bi/chartController';
 import React, {useState} from 'react';
 import { UploadOutlined } from '@ant-design/icons';
 import {
@@ -46,7 +46,7 @@ const AddChart: React.FC = () => {
 
 
     try {
-      const res = await genChartByAIUsingPOST(params,{},values.file.file.originFileObj)
+      const res = await genChartByAiUsingPOST(params,{},values.file.file.originFileObj)
       if(!res?.data){
         message.success('分析失败')
       }else {
